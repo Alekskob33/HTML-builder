@@ -31,6 +31,10 @@ stdin.on('data', (data) => {
 });
 
 // before Exit
+process.on('SIGINT', function () {
+  process.exit();
+});
+
 process.on('exit', () => {
   console.log('Bye! See you later!');
 });
